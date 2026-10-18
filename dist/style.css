@@ -5,3 +5,17 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 .enquiry-form{display:grid;grid-template-columns:1fr;gap:8px;max-width:420px;margin:25px 0 22px}.enquiry-form label{font-size:10px;color:#dfcbd6;margin-top:5px}.enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;border:1px solid #96798b;background:#ffffff09;color:var(--paper);border-radius:3px;padding:12px 13px;font:12px 'DM Sans',sans-serif}.enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:#c5adbb}.enquiry-form select option{background:var(--plum)}.enquiry-form textarea{resize:vertical}.enquiry-form .button{border:0;margin:6px 0 0;justify-content:space-between;cursor:pointer}.enquiry-form small{font-size:8px;line-height:1.6;color:#c5adbb}.location-map{width:100%;height:200px;border:0;margin:0 0 22px;background:#ddd1c8;border-radius:2px}.visit-card{margin-top:25px}.whatsapp-float{position:fixed;bottom:22px;right:22px;z-index:20;border:1px solid #fff4;background:#315c43;color:white;display:flex;gap:10px;align-items:center;border-radius:50px;padding:13px 18px;box-shadow:0 5px 25px #0002;font-size:11px}.whatsapp-float svg{width:21px;height:21px}.whatsapp-float:hover{background:#254b35}.whatsapp-float:focus-visible{outline-color:#d6af89}input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #e5a183;outline-offset:2px}@media(max-width:700px){.whatsapp-float{right:15px;bottom:15px;padding:13px}.whatsapp-float span{display:none}.visit-card{margin-top:0}.enquiry-form{max-width:none}}
+
+/* Motion follows the rhythm: short entrances, gentle photo drift and note ripples. */
+@keyframes raag-enter{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+@keyframes raag-photo-drift{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes raag-note-sway{0%,100%{rotate:0deg}50%{rotate:8deg}}
+@keyframes raag-ripple{from{opacity:.7;scale:.25}to{opacity:0;scale:2.8}}
+@media(prefers-reduced-motion:no-preference){
+.hero-copy>.eyebrow{animation:raag-enter .7s .05s both}.hero-copy h1{animation:raag-enter .9s .15s both}.hero-copy .intro{animation:raag-enter .8s .3s both}.hero-copy>.button,.hero-proof{animation:raag-enter .8s .45s both}
+.photo-back{animation:raag-enter 1s .2s both,raag-photo-drift 6s 1.2s 3 ease-in-out}.photo-front{animation:raag-enter 1s .4s both,raag-photo-drift 7s 1.4s 3 ease-in-out}.round-stamp{animation:raag-enter 1s .65s both}.drawn-note{animation:raag-note-sway 4s 1s 4 ease-in-out;transform-origin:center bottom}
+.button span,.nav-cta span,.gallery-item i{display:inline-block;transition:transform .25s}.button:hover span,.nav-cta:hover span,.gallery-item:hover i{transform:translate(3px,-3px)}
+.course-symbol{transition:color .3s}.course-panel:hover .course-symbol{color:var(--plum)}
+.note-keys button{position:relative;overflow:hidden}.note-keys button.playing::after{content:'';position:absolute;inset:30%;border:1px solid var(--orange);border-radius:50%;pointer-events:none;animation:raag-ripple .65s ease-out both}
+.gallery-item img{transition:filter .25s,transform .45s cubic-bezier(.2,.65,.3,1)}.whatsapp-float{transition:background .2s,transform .25s,box-shadow .25s}.whatsapp-float:hover{transform:translateY(-4px);box-shadow:0 9px 28px #0003}
+}
